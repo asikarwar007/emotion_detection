@@ -8,7 +8,13 @@ function youtube_parser(url) {
     var match = url.match(regExp);
     return (match && match[7].length == 11) ? match[7] : false;
 };
-
+if (Meteor.isClient) {      
+    Meteor.startup(function() {
+            $( "p" ).click(function() {
+              console.log("awwd");
+            });
+          });
+}
 Template.home.onCreated(function () {
     Meteor.subscribe("posts.all");
 
@@ -19,10 +25,10 @@ Template.home.onCreated(function () {
 
 let player;
 
-
 Template.home.helpers({
+    
     'posts'() {
-        return Posts.find({}, {sort: {timestamp: -1}}).fetch();
+        return Posts.find({"watchers":"pal"}, {sort: {timestamp: -1}}).fetch();
     },
     'stockImage'(postUrl) {
         return `http://img.youtube.com/vi/${youtube_parser(postUrl)}/0.jpg`;

@@ -5,6 +5,12 @@
                 <div id="video-player"></div>
             </div>
         </div> -->
+
+
+        <script type="text/javascript">
+            
+
+        </script>
         <div class="ui row">
             <div class="thirteen wide column">
                 <div class="ui segment feed">
@@ -18,7 +24,7 @@
                                     <a class="user">
                                         {{watchers post.watchers}}
                                     </a> reacted to <a class="video-trigger" href="{{post.url}}">a {{post.type}}</a>
-                                    named <p class="video-trigger">'{{post.name}}</p>
+                                    named <p id="trigger" >'{{post.name}}</p>
                                     <div class="date">
                                         {{timestamp post.timestamp}}
                                     </div>
