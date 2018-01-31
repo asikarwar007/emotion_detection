@@ -28,7 +28,7 @@ let player;
 Template.home.helpers({
     
     'posts'() {
-        return Posts.find({"watchers":"pal"}, {sort: {timestamp: -1}}).fetch();
+        return Posts.find({}, {sort: {timestamp: -1}}).fetch();
     },
     'stockImage'(postUrl) {
         return `http://img.youtube.com/vi/${youtube_parser(postUrl)}/0.jpg`;

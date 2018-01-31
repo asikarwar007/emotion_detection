@@ -1,10 +1,6 @@
 <template name="home">
     <div class="ui stackable container grid">
-        <!-- <div class="ui row centered">
-            <div class="ui sixteen column">
-                <div id="video-player"></div>
-            </div>
-        </div> -->
+        <h3>Review results</h3>
 
 
         <script type="text/javascript">
@@ -24,7 +20,7 @@
                                     <a class="user">
                                         {{watchers post.watchers}}
                                     </a> reacted to <a class="video-trigger" href="{{post.url}}">a {{post.type}}</a>
-                                    named <p id="trigger" >'{{post.name}}</p>
+                                    named <p id="trigger">{{post.name}}</p>
                                     <div class="date">
                                         {{timestamp post.timestamp}}
                                     </div>
